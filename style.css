@@ -11,6 +11,7 @@ body {
 
 }
 
+
 .logo {
     width: 300px;
     display: block;
@@ -48,6 +49,7 @@ input {
     color: #555555;
     cursor: pointer;
 }
+
 
 button {
     border-radius: 5px;

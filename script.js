@@ -8,8 +8,10 @@ function convertValues() {
     const currencyValueConverted = document.querySelector(".currency-value")
 
 
-    const dolarToday = 5.20
-    const euroToday = 6.20
+    const dolarToday = 4.95
+    const euroToday = 5.36
+    const rupiaToday = 0.060
+    const libraToday = 6.28
 
     if (currencySelect.value == "dolar") {
         //Se o select estiver selecionado o valor de dolar, entre aqui
@@ -26,6 +28,23 @@ function convertValues() {
             style: "currency",
             currency: "EUR"
         }).format(inputCurrencyValue / euroToday)
+    }
+
+
+    if (currencySelect.value == "rupia") {
+        // Se o valor estiver selecioanado o valor de euro, entre aqui
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR"
+        }).format(inputCurrencyValue / rupiaToday)
+    }
+
+    if (currencySelect.value == "libra") {
+        // Se o valor estiver selecioanado o valor de euro, entre aqui
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputCurrencyValue / rupiaToday)
     }
 
 
@@ -48,6 +67,17 @@ function changeCurrency() {
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = "Euro"
         currencyImage.src = "./assets/euro.png"
+    }
+
+
+    if (currencySelect.value == "rupia") {
+        currencyName.innerHTML = "Rupia Indiana"
+        currencyImage.src = "./assets/rupia.png"
+    }
+
+    if (currencySelect.value == "libra") {
+        currencyName.innerHTML = "LIBRA"
+        currencyImage.src = "./assets/libra 1.png"
     }
 
 
